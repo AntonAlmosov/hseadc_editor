@@ -1,3 +1,3 @@
 class Page < ApplicationRecord
-  has_many :blocks
+  has_many :phrases
 end
