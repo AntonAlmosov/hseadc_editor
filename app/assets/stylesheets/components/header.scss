@@ -1,0 +1,19 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Helvetica Neue';
+  font-weight: 600;
+  font-size: 36px;
+  width: 1200px;
+}
+
+.indexHeader {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}

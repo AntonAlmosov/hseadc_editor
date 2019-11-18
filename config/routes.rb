@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  
   root :to => 'page#index'
 
   resources :page do
     collection do
+      get :get_pages
+      get :get_page
+      get :handle_create
       post :handle_edit
     end
   end
