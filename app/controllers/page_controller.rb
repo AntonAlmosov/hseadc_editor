@@ -27,7 +27,7 @@ class PageController < ApplicationController
   def handle_edit
     page = Page.find(params[:id])
     page.tittle = params[:tittle]
-    if page.save?
+    if page.save
       respond_to do |format|
         format.json { json: => {status: 'ok', response: page}}
       end

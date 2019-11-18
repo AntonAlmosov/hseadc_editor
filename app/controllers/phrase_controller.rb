@@ -12,10 +12,20 @@ class PhraseController < ApplicationController
   def handle_edit
     phrase = Phrase.find(params[:id])
     phrase.order = params[:order]
-    if phrase.save? 
+    if phrase.save
       respond_to do |format|
         format.json { json: => {status: 'ok', response: phrase}}
       end
     end
   end
+
+  def handle_destroy
+    phrase = Phrase.find(params[:id])
+    if phrase.destroy 
+      respond_to do |format|
+        format.json { json: => {status: 'ok'}}
+      end
+    end
+  end
+  
 end
