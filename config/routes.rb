@@ -1,13 +1,6 @@
 Rails.application.routes.draw do
-  get 'block/handle_create'
-  get 'block/handle_edit'
-  get 'block/handle_destroy'
-  get 'block/handle_upload'
-  get 'phrase/create'
-  get 'phrase/edit'
-  get 'page/index'
-  get 'page/show'
-  get 'page/edit'
+  
+  root :to => 'page#index'
 
   resources :page do
     collection do
