@@ -1,11 +1,13 @@
 class PhraseController < ApplicationController
+
+  skip_before_action :verify_authenticity_token
+
   def handle_create
     page = Page.find(params[:page_id])
     phrase = page.phrases.new()
     if phrase.save 
-      respond_to do |format|
-        format.json { json: => {status: 'ok', response: phrase}}
-      end
+      msg = { :status => "ok", :response => phrase }
+      render :json => msg 
     end
   end
 
@@ -13,18 +15,16 @@ class PhraseController < ApplicationController
     phrase = Phrase.find(params[:id])
     phrase.order = params[:order]
     if phrase.save
-      respond_to do |format|
-        format.json { json: => {status: 'ok', response: phrase}}
-      end
+      msg = { :status => "ok", :response => phrase }
+      render :json => msg 
     end
   end
 
   def handle_destroy
     phrase = Phrase.find(params[:id])
     if phrase.destroy 
-      respond_to do |format|
-        format.json { json: => {status: 'ok'}}
-      end
+      msg = { :status => "ok", :response => phrase }
+      render :json => msg 
     end
   end
   

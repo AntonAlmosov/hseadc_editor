@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2019_11_18_103147) do
   end
 
   create_table "blocks", force: :cascade do |t|
-    t.string "type"
+    t.string "block_type"
     t.string "width"
     t.text "content"
     t.string "order"

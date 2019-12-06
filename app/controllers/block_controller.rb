@@ -1,23 +1,24 @@
 class BlockController < ApplicationController
+
+  skip_before_action :verify_authenticity_token
+
   def handle_create
     phrase = Phrase.find(params[:phrase_id])
     block = phrase.blocks.new()
-    block.type = params[:type]
+    block.block_type = params[:type]
     block.width = params[:width]
     if block.save
-      respond_to do |format|
-        format.json { json: => {status: 'ok', responce: block} }
-      end
+      msg = { :status => "ok", :response => block }
+      render :json => msg 
     end
   end
 
   def handle_edit
-    block = Block.find(parmas[:id])
+    block = Block.find(params[:id])
     block[params[:attr]] = params[:value]
     if block.save
-      respond_to do |format|
-        format.json { json: => {status: 'ok', responce: block} }
-      end
+      msg = { :status => "ok", :response => block }
+      render :json => msg 
     end
   end
 
@@ -26,9 +27,8 @@ class BlockController < ApplicationController
     if block.block_image.attached?
     end
     if block.destroy
-      respond_to do |format|
-        format.json { json: => {status: 'ok'}
-      end
+      msg = { :status => "ok" }
+      render :json => msg 
     end
   end
 
@@ -37,9 +37,8 @@ class BlockController < ApplicationController
     block.block_image = params[:image]
     block.content = rails_blob_path(block.block_image, disposition: "attachment", only_path: true)
     if block.save
-      respond_to do |format|
-        format.json { json: => {status: 'ok', responce: block} }
-      end
+      msg = { :status => "ok", :response => block }
+      render :json => msg 
     end
   end
 end

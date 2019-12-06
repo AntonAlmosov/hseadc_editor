@@ -3,10 +3,32 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  font-family: 'Helvetica Neue';
+  font-family: 'IBM Plex Mono';
   font-weight: 600;
   font-size: 36px;
   width: 1200px;
+
+  h1 {
+    outline: 0;
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    input {
+      outline: 0;
+      font-family: 'IBM Plex Mono';
+      font-weight: 600;
+      font-size: 36px;
+      border: 0;
+      width: auto;
+    }
+
+    span {
+      margin-left: -35px;
+    }
+  }
 }
 
 .indexHeader {

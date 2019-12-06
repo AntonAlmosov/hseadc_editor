@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :page do
     collection do
       get :get_pages
-      get :get_page
+      post :get_page
       get :handle_create
       post :handle_edit
     end

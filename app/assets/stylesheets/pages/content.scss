@@ -1,0 +1,21 @@
+.contentWrapper {
+  margin-top: 100px;
+  width: 100%;
+}
+
+.phrase {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.half {
+  width: calc(50% - 10px);
+}
+
+.full {
+  width: 100%;
+  text-align: center;
+}

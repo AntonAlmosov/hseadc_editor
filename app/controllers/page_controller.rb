@@ -1,4 +1,7 @@
 class PageController < ApplicationController
+
+  skip_before_action :verify_authenticity_token
+
   def index
   end
 
@@ -22,20 +25,21 @@ class PageController < ApplicationController
 
   def get_page
     page = Page.find(params[:id])
-    respond_to do |format|
-      msg = { :status => "ok", :response => page }
-      format.json  { render :json => msg }
+    phrasesCol = []
+    page.phrases.each do |phrase|
+      phrasesCol.push({id: phrase.id, blocks:phrase.blocks})
     end
+    collection = {tittle: page.tittle, phrases: phrasesCol}
+    msg = { :status => "ok", :response => collection }
+    render :json => msg 
   end
 
   def handle_create
     page = Page.new()
     page.tittle = 'Новая страница'
     if page.save
-      respond_to do |format|
-        msg = { :status => "ok", :response => page }
-        format.json {render json: msg}
-      end
+      msg = { :status => "ok", :response => page }
+      render :json => msg 
     end
   end
 
@@ -43,10 +47,8 @@ class PageController < ApplicationController
     page = Page.find(params[:id])
     page.tittle = params[:tittle]
     if page.save
-      respond_to do |format|
-        msg = { :status => "ok", :response => page }
-        format.json {render json: msg}
-      end
+        # msg = { :status => "ok", :response => collection }
+        # render :json => msg }
     end
   end
 end
