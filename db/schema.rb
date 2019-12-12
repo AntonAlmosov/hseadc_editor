@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2019_12_10_102141) do
   create_table "blocks", force: :cascade do |t|
     t.integer "page_id"
     t.integer "position"
+    t.string "block_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
