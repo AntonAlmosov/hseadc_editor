@@ -5,10 +5,9 @@ class Block < ApplicationRecord
   belongs_to :page
 
   def create_phrases
-    if self.block_type == 'heading__text_image'
-      self.phrases.create(phrase_type: 'heading', position: 1)
-      self.phrases.create(phrase_type: 'text', position: 2)
-      self.phrases.create(phrase_type: 'image', position: 3)
+    phrases = self.block_type.split('_')
+    phrases.each do |phrase, i|
+      self.phrases.create(phrase_type: phrase, position: i)
     end
   end
 end

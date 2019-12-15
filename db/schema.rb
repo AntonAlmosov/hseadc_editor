@@ -25,6 +25,9 @@ ActiveRecord::Schema.define(version: 2019_12_10_102141) do
 
   create_table "pages", force: :cascade do |t|
     t.string "title"
+    t.integer "year"
+    t.string "team"
+    t.string "role"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
