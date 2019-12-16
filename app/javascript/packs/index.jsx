@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Index from "../pages/Index";
+import Index from "../templates/Index";
 
 document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(
