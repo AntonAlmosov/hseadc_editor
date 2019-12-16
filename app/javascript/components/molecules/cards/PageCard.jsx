@@ -1,11 +1,21 @@
 import React from "react";
 
-export default ({ tittle, page_id }) => {
+import MoreButton from "../../atoms/buttons/CardMoreButton";
+
+export default ({ title, page_id, published, image }) => {
   return (
-    <a href={"page/" + page_id} target="_self" className="pageCard">
-      <div className="cover"></div>
-      <div className="tittle">
-        <h1>{tittle}</h1>
+    <a href={"page/" + page_id} target="_self" className="page_card">
+      <div className="heading">
+        <div className="title">
+          <h1>{title}</h1>
+          <div
+            className={published ? "eye published" : "eye unpublished"}
+          ></div>
+        </div>
+        <MoreButton page_id={page_id} />
+      </div>
+      <div className={image == "" ? "cover placeholder" : "cover"}>
+        {image != "" && <img src={image} alt="" />}
       </div>
     </a>
   );
