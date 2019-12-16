@@ -1,0 +1,57 @@
+.header_search_input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 850px;
+  height: 60px;
+  border-radius: 8px;
+  background-color: #1B1B1B;
+  font-family: $font;
+
+  .search_icon {
+    margin-left: 12px;
+    width: 26px;
+    height: 26px;
+    background-image: url(asset-path('icons/Search.svg'));
+    background-size: cover;
+  }
+
+  input {
+    outline: 0;
+    border: 0;
+    margin-left: 15px;
+    width: 752px;
+    font-size: 22px;
+    letter-spacing: -0.015em;
+    color: #E1E1E1;
+    background-color: rgba(0, 0, 0, 0);
+    transition: 0.3s;
+
+    &.focused {
+      transition: 0.3s;
+
+      &::placeholder {
+        color: #525253;
+      }
+    }
+
+    &.unfocused {
+      transition: 0.3s;
+
+      &::placeholder {
+        color: #404041;
+      }
+    }
+  }
+
+  .wipe_icon {
+    position: absolute;
+    right: 15px;
+    top: 19px;
+    width: 22px;
+    height: 22px;
+    background-image: url(asset-path('icons/Wipe.svg'));
+    background-size: cover;
+    cursor: pointer;
+  }
+}

@@ -1,9 +1,9 @@
 import React from "react";
 
-export default ({ type, innerText, action }) => {
+export default ({ use, label, onClick }) => {
   return (
-    <div className={"default_button " + type} onClick={action}>
-      {innerText}
+    <div className={"default_button " + use} onClick={onClick}>
+      {label}
     </div>
   );
 };

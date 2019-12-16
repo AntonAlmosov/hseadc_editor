@@ -1,5 +1,15 @@
 import React from "react";
 
-export default ({ action }) => {
-  return <div className="header indexHeader"></div>;
+import LogoButton from "../../atoms/buttons/LogoButton";
+import HeaderSearchInput from "../../atoms/inputs/HeaderSearchInput";
+import DefaultButton from "../../atoms/buttons/DefaultButton";
+
+export default ({ onCreateClick, onSearch }) => {
+  return (
+    <div className="header index_header">
+      <LogoButton />
+      <HeaderSearchInput onChange={value => onSearch()} />
+      <DefaultButton onClick={onCreateClick} label="New Page" use="active" />
+    </div>
+  );
 };

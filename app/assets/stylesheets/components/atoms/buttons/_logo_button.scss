@@ -1,0 +1,9 @@
+.logo_button {
+  display: block;
+  width: 48px;
+  height: 48px;
+  background-image: url(asset-path('brand/logo.svg'));
+  background-size: cover;
+  cursor: pointer;
+  text-decoration: none;
+}
