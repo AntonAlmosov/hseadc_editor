@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :phrase do
+  resources :block do
     collection do
       post :handle_create
       post :handle_edit
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :block do
+  resources :phrase do
     collection do
       post :handle_create
       post :handle_edit

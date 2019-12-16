@@ -13,30 +13,25 @@ class PageController < ApplicationController
 
   def get_pages
     pages = Page.all
-    collection = []
-    pages.each do |p|
-      collection.push({id: p.id, tittle: p.tittle})
-    end
     respond_to do |format|
-      msg = { :status => "ok", :response => collection }
-      format.json  { render :json => msg }
+      format.json  { render :json => pages }
     end
   end
 
   def get_page
     page = Page.find(params[:id])
-    phrasesCol = []
-    page.phrases.each do |phrase|
-      phrasesCol.push({id: phrase.id, blocks:phrase.blocks})
+    blocks = []
+    page.blocks.each do |block|
+      blocks.push({block: block, phrases:blocks.phrases})
     end
-    collection = {tittle: page.tittle, phrases: phrasesCol}
+    collection = {page: page, blocks: blocks}
     msg = { :status => "ok", :response => collection }
     render :json => msg 
   end
 
   def handle_create
     page = Page.new()
-    page.tittle = 'Новая страница'
+    page.tittle = 'Untitled'
     if page.save
       msg = { :status => "ok", :response => page }
       render :json => msg 
