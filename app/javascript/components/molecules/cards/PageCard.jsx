@@ -4,7 +4,7 @@ import MoreButton from "../../atoms/buttons/CardMoreButton";
 
 export default ({ title, page_id, published, image }) => {
   return (
-    <a href={"page/" + page_id} target="_self" className="page_card">
+    <a href={"page/" + page_id + "/edit"} target="_self" className="page_card">
       <div className="heading">
         <div className="title">
           <h1>{title}</h1>

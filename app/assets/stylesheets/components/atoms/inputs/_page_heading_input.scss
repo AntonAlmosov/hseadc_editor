@@ -1,0 +1,11 @@
+.page_heading_input {
+  margin-bottom: 170px;
+  font-family: $font;
+  font-size: 70px;
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.87);
+
+  &:placeholder {
+    color: rgba(255, 255, 255, 0.3);
+  }
+}

@@ -1,0 +1,21 @@
+.header_more_button {
+  position: relative;
+
+  .more_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #252525;
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    cursor: pointer;
+
+    .more_icon {
+      background-image: url(asset-path('icons/more_green.svg'));
+      background-size: contain;
+      width: 15.36px;
+      height: 15.36px;
+    }
+  }
+}

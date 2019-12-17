@@ -1,0 +1,18 @@
+.edit_header {
+  .logo_button {
+    position: absolute;
+    left: 0px;
+    top: 44px;
+  }
+
+  .header_buttons {
+    position: absolute;
+    right: 0;
+    top: 44px;
+    display: flex;
+
+    .default_button {
+      margin-right: 36px;
+    }
+  }
+}

@@ -12,6 +12,7 @@ export default () => {
 
   useEffect(() => {
     get_pages();
+    window.document.title = "Pages – HSEADC";
   }, []);
 
   useEffect(() => {
@@ -23,14 +24,14 @@ export default () => {
   }, [search]);
 
   let handle_heading_change = () => {
-    if (search.active)
+    if (search.active) {
       setHeading(
         search.result.length +
           " " +
           pluralize("page", search.result.length) +
           " found"
       );
-    else setHeading(pages.length + " " + pluralize("page", pages.length));
+    } else setHeading(pages.length + " " + pluralize("page", pages.length));
   };
 
   let get_pages = () => {

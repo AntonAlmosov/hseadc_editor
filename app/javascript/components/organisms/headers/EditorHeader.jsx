@@ -1,5 +1,21 @@
 import React from "react";
 
-export default () => {
-  return <div className="header indexHeader"></div>;
+import LogoButton from "../../atoms/buttons/LogoButton";
+import HeaderMoreButton from "../../atoms/buttons/HeaderMoreButton";
+import DefaultButton from "../../atoms/buttons/DefaultButton";
+
+export default ({ onSaveClick, filled }) => {
+  return (
+    <div className="header edit_header">
+      <LogoButton />
+      <div className="header_buttons">
+        <DefaultButton
+          onClick={onSaveClick}
+          label="Save changes"
+          use={filled ? "active" : "inactive"}
+        />
+        <HeaderMoreButton />
+      </div>
+    </div>
+  );
 };

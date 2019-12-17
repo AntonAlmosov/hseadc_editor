@@ -1,26 +1,34 @@
 .default_input {
   font-family: $font;
+  width: 250px;
 
   .input_label {
     font-size: 14px;
+    line-height: 22px;
     font-weight: 500;
     letter-spacing: -0.2px;
 
-    & .normal {
+    &.normal {
       color: #595959;
     }
 
-    & .active {
+    &.active {
       color: #33ff00;
     }
   }
 
   input {
-    margin-top: 5px;
+    width: 100%;
+    margin-top: 2px;
     font-size: 18px;
     outline: 0;
     border: 0;
-    color: #595959;
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 0);
     letter-spacing: -0.5px;
+
+    &:placeholder {
+      color: rgba(255, 255, 255, 0.3);
+    }
   }
 }
