@@ -8,7 +8,7 @@ export default ({ onCreateClick, onSearch }) => {
   return (
     <div className="header index_header">
       <LogoButton />
-      <HeaderSearchInput onChange={value => onSearch()} />
+      <HeaderSearchInput onChange={value => onSearch(value)} />
       <DefaultButton onClick={onCreateClick} label="New Page" use="active" />
     </div>
   );

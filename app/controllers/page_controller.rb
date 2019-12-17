@@ -13,9 +13,7 @@ class PageController < ApplicationController
 
   def get_pages
     pages = Page.all
-    respond_to do |format|
-      format.json  { render :json => pages }
-    end
+    render :json => pages 
   end
 
   def get_page
@@ -30,20 +28,21 @@ class PageController < ApplicationController
   end
 
   def handle_create
-    page = Page.new()
-    page.tittle = 'Untitled'
-    if page.save
-      msg = { :status => "ok", :response => page }
-      render :json => msg 
-    end
+    page = Page.create(page_create_params)
+    render :json => {:status => 'ok', :page_id => page.id}
   end
 
   def handle_edit
     page = Page.find(params[:id])
-    page.tittle = params[:tittle]
+    page.title = params[:title]
     if page.save
         # msg = { :status => "ok", :response => collection }
         # render :json => msg }
     end
   end
+
+  private 
+    def page_create_params
+      params.require(:page).permit(:title, :published)
+    end
 end

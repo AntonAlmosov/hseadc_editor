@@ -5,6 +5,7 @@ class CreatePages < ActiveRecord::Migration[6.0]
       t.integer :year
       t.string :team
       t.string :role
+      t.boolean :published
 
       t.timestamps
     end

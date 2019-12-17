@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     collection do
       get :get_pages
       post :get_page
-      get :handle_create
+      post :handle_create
       post :handle_edit
     end
   end

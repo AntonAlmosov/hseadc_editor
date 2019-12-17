@@ -7,7 +7,8 @@
   font-family: $font;
   color: #E1E1E1;
   text-decoration: none;
-  margin-top: 30px;
+  margin-top: 50px;
+  margin-right: 50px;
 
   .heading {
     width: 359px;
@@ -57,5 +58,21 @@
       object-fit: cover;
       object-position: center center;
     }
+  }
+
+  &:nth-child(1) {
+    margin-top: 0;
+  }
+
+  &:nth-child(2) {
+    margin-top: 0;
+  }
+
+  &:nth-child(3) {
+    margin-top: 0;
+  }
+
+  &:nth-child(3n) {
+    margin-right: 0;
   }
 }
