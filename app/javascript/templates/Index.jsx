@@ -41,9 +41,9 @@ export default () => {
   let handle_create_page = () => {
     Axios.post("/page/handle_create", {
       page: { title: "Untitled", published: false },
-    }).then(res =>
-      window.location.replace("page/" + res.data.page_id + "/edit")
-    );
+    }).then(res => {
+      window.location.replace("page/" + res.data.page_id + "/edit");
+    });
   };
 
   let handle_search = query => {
