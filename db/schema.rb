@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2019_12_10_102141) do
     t.string "team"
     t.string "role"
     t.boolean "published"
+    t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

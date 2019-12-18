@@ -1,0 +1,18 @@
+.page_edit_wrapper {
+  padding-top: 257px;
+  width: 920px;
+  margin: 0 auto;
+  .page_heading_input {
+    margin-bottom: 170px;
+  }
+  .page_edit_info {
+    display: flex;
+    margin-top: 36px;
+    justify-content: space-between;
+    .page_edit_labels {
+      .default_input {
+        margin-bottom: 65px;
+      }
+    }
+  }
+}

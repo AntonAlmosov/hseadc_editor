@@ -46,10 +46,19 @@ export default () => {
     });
   };
 
+  let check;
+
   let handle_search = query => {
     if (query.length) {
-      let reg = RegExp("^" + query, "i");
-      let searchResult = pages.filter(page => reg.test(page.title));
+      let reg = RegExp(query, "i");
+      let searchResult = pages.filter(
+        page =>
+          reg.test(page.title) ||
+          reg.test(page.year) ||
+          reg.test(page.team) ||
+          reg.test(page.role) ||
+          reg.test(page.description)
+      );
       setSearch({ active: true, result: searchResult });
     } else setSearch({ active: false, result: [] });
   };
@@ -60,7 +69,7 @@ export default () => {
         onCreateClick={handle_create_page}
         onSearch={handle_search}
       />
-      <h1 className="default_heading index_heading">{heading}</h1>
+      <h1 className="general_heading index_heading">{heading}</h1>
       <CardsWrapper pages={search.active ? search.result : pages} />
     </div>
   );

@@ -11,6 +11,11 @@ class PageController < ApplicationController
   def edit
   end
 
+  def update
+    page = Page.find(params[:id])
+    page.update(page_params)
+  end
+
   def get_pages
     pages = Page.all
     render :json => pages 
@@ -34,15 +39,14 @@ class PageController < ApplicationController
 
   def handle_edit
     page = Page.find(params[:id])
-    page.title = params[:title]
-    if page.save
-        # msg = { :status => "ok", :response => collection }
-        # render :json => msg }
-    end
+    page.update(page_params)
   end
 
   private 
     def page_create_params
       params.require(:page).permit(:title, :published)
+    end
+    def page_params
+      params.require(:page).permit(:title, :year, :role, :team, :description)
     end
 end
