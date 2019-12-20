@@ -1,0 +1,38 @@
+.text_text_block {
+  display: flex;
+  justify-content: space-between;
+  .text {
+    width: 448px;
+  }
+}
+
+.heading_text_block {
+  display: flex;
+  justify-content: space-between;
+  .heading {
+    width: 460px;
+  }
+  .text {
+    width: 345px;
+  }
+}
+
+.edit_block {
+  textarea {
+    color: rgba(255, 255, 255, 0.6);
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.3);
+    }
+  }
+  .heading {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 48px;
+    letter-spacing: -0.02em;
+  }
+  .text {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+  }
+}

@@ -25,7 +25,7 @@ class PageController < ApplicationController
     page = Page.find(params[:id])
     blocks = []
     page.blocks.each do |block|
-      blocks.push({block: block, phrases:blocks.phrases})
+      blocks.push({block: block, phrases:block.phrases})
     end
     collection = {page: page, blocks: blocks}
     msg = { :status => "ok", :response => collection }

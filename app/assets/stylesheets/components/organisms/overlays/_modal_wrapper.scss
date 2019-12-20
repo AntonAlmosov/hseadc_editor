@@ -1,0 +1,14 @@
+.modal_wrapper_portal {
+  outline: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+}
+
+.modal_wrapper_overlay {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+}

@@ -1,0 +1,87 @@
+.create_block_modal {
+  width: 880px;
+  margin-left: -440px;
+  height: 660px;
+  margin-top: -330px;
+  border-radius: 12px;
+  background-color: #191919;
+  .create_block_header {
+    width: 100%;
+    height: 124px;
+    font-family: $font;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1 {
+      margin-left: 34px;
+      color: rgba(196, 196, 196, 0.87);
+      font-weight: 500;
+      font-size: 36px;
+      line-height: 48px;
+      letter-spacing: -0.02em;
+    }
+    .create_block_close {
+      cursor: pointer;
+      width: 28px;
+      height: 28px;
+      margin-right: 42px;
+      margin-top: 10px;
+      background-image: url(asset-path("icons/close.svg"));
+    }
+  }
+  .create_block_cards {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 39px;
+    box-sizing: border-box;
+    width: 100%;
+    height: calc(100% - 124px);
+    overflow-y: scroll;
+    .create_block_card {
+      cursor: pointer;
+      width: 253px;
+      height: 144px;
+      background-size: contain;
+    }
+    .image_block {
+      margin-top: 10px;
+      margin-right: 23px;
+      background-image: url(asset-path("cards/content/image.svg"));
+    }
+    .heading_text_block {
+      margin-top: 10px;
+      margin-right: 23px;
+      background-image: url(asset-path("cards/content/heading_text.svg"));
+    }
+    .image_heading_text_block {
+      margin-top: 10px;
+      margin-right: 0px;
+      background-image: url(asset-path("cards/content/image_heading_text.svg"));
+    }
+    .heading_text_image_block {
+      margin-top: 10px;
+      margin-right: 23px;
+      background-image: url(asset-path("cards/content/heading_text_image.svg"));
+    }
+    .text_text_block {
+      margin-top: 10px;
+      margin-right: 23px;
+      background-image: url(asset-path("cards/content/text_text.svg"));
+    }
+    .image_image_block {
+      margin-top: 10px;
+      margin-right: 0px;
+      background-image: url(asset-path("cards/content/image_image.svg"));
+    }
+    .video_block {
+      margin-top: 10px;
+      margin-right: 23px;
+      background-image: url(asset-path("cards/content/video.svg"));
+    }
+    .bookmark_block {
+      margin-top: 10px;
+      margin-right: 23px;
+      background-image: url(asset-path("cards/content/bookmark.svg"));
+    }
+  }
+}

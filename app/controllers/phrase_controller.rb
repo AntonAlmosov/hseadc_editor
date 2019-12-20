@@ -2,19 +2,9 @@ class PhraseController < ApplicationController
 
   skip_before_action :verify_authenticity_token
 
-
-  def handle_create
-    block = Block.find(params[:block_id])
-    block.phrases.create()
-  end
-
   def handle_edit
-    block = Block.find(params[:id])
-    block[params[:attr]] = params[:value]
-    if block.save
-      msg = { :status => "ok", :response => block }
-      render :json => msg 
-    end
+    phrase = Phrase.find_by(id: params[:id])
+    phrase.update(phrase_params)
   end
 
   def handle_destroy
@@ -39,6 +29,7 @@ class PhraseController < ApplicationController
 
   private
     def phrase_params
+      params.require(:phrase).permit(:image, :content)
     end
   
 end

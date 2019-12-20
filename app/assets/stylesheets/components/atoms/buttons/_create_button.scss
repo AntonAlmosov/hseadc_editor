@@ -1,0 +1,19 @@
+.create_button {
+  position: absolute;
+  left: 0;
+  bottom: 45px;
+  width: 55px;
+  height: 55px;
+  border-radius: 28px;
+  background-color: #2e2e2e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  .create_button_icon {
+    width: 19px;
+    height: 19px;
+    background-image: url(image-path("icons/plus.svg"));
+    background-size: contain;
+  }
+}
