@@ -1,8 +1,8 @@
 .create_block_modal {
   width: 880px;
   margin-left: -440px;
-  height: 660px;
-  margin-top: -330px;
+  height: 490px;
+  margin-top: -245px;
   border-radius: 12px;
   background-color: #191919;
   .create_block_header {
@@ -35,7 +35,7 @@
     padding-left: 39px;
     box-sizing: border-box;
     width: 100%;
-    height: calc(100% - 124px);
+    height: calc(100% - 162px);
     overflow-y: scroll;
     .create_block_card {
       cursor: pointer;

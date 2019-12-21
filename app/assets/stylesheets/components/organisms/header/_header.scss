@@ -1,6 +1,7 @@
 .header {
   position: fixed;
   top: 0;
+  z-index: 100;
   left: 50%;
   transform: translateX(-50%);
   width: 1400px;

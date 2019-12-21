@@ -33,14 +33,6 @@ export default ({ close, createBlock }) => {
           className="create_block_card image_heading_text_block"
           onClick={() => createBlock("image_heading_text")}
         ></div>
-        <div
-          className="create_block_card video_block"
-          onClick={() => createBlock("video")}
-        ></div>
-        <div
-          className="create_block_card bookmark_block"
-          onClick={() => createBlock("bookmark")}
-        ></div>
       </div>
     </>
   );
