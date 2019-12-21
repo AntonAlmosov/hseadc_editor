@@ -2,7 +2,7 @@ class Phrase < ApplicationRecord
   # after_update :create_phrases
   default_scope { order("created_at") }
 
-  has_one_attched :image
+  has_one_attached :images
   belongs_to :block
   
   # def create_phrases

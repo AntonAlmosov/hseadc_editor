@@ -54,6 +54,17 @@ export default () => {
           id: [el.name],
         })
       );
+    let images = document.querySelectorAll(".phrase_image");
+    for (let i = 0; i < images.length; i++) {
+      const formData = new FormData();
+      formData.append("image", images[i].files[0]);
+      formData.append("id", images[i].id.split("_")[1]);
+      Axios.post("/phrase/handle_upload", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+    }
   };
 
   let check_filled = () => {

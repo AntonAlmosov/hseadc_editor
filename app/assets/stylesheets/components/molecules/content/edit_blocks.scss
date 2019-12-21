@@ -1,22 +1,3 @@
-.text_text_block {
-  display: flex;
-  justify-content: space-between;
-  .text {
-    width: 448px;
-  }
-}
-
-.heading_text_block {
-  display: flex;
-  justify-content: space-between;
-  .heading {
-    width: 460px;
-  }
-  .text {
-    width: 345px;
-  }
-}
-
 .edit_block {
   textarea {
     color: rgba(255, 255, 255, 0.6);

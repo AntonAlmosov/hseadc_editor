@@ -1,0 +1,10 @@
+.heading_text_block {
+  display: flex;
+  justify-content: space-between;
+  .heading {
+    width: 460px;
+  }
+  .text {
+    width: 345px;
+  }
+}

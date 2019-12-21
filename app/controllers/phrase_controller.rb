@@ -18,12 +18,11 @@ class PhraseController < ApplicationController
   end
 
   def handle_upload
-    block = Block.find(params[:id])
-    block.block_image = params[:image]
-    block.content = rails_blob_path(block.block_image, disposition: "attachment", only_path: true)
-    if block.save
-      msg = { :status => "ok", :response => block }
-      render :json => msg 
+    phrase = Phrase.find(params[:id])
+    phrase.images = params[:image]
+    if phrase.save!
+      phrase.content = rails_blob_path(phrase.images, disposition: "attachment", only_path: true)
+      phrase.save
     end
   end
 

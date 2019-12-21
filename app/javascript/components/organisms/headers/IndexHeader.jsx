@@ -1,7 +1,7 @@
 import React from "react";
 
 import LogoButton from "../../atoms/buttons/LogoButton";
-import HeaderSearchInput from "../../atoms/inputs/HeaderSearchInput";
+import HeaderSearchInput from "../../molecules/inputs/HeaderSearchInput";
 import DefaultButton from "../../atoms/buttons/DefaultButton";
 
 export default ({ onCreateClick, onSearch }) => {
