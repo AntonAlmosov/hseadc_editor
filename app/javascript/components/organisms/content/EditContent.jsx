@@ -2,6 +2,7 @@ import React from "react";
 import TextTextBlock from "../../molecules/edit_blocks/TextTextBlock";
 import HeadingTextBlock from "../../molecules/edit_blocks/HeadingTextBlock";
 import ImageBlock from "../../molecules/edit_blocks/ImageBlock";
+import ImageHeadingTextBlock from "../../molecules/edit_blocks/ImageHeadingTextBlock";
 
 export default ({ blocks }) => {
   return (
@@ -20,6 +21,9 @@ export default ({ blocks }) => {
             )}
             {block.block.block_type == "image" && (
               <ImageBlock phrases={block.phrases} />
+            )}
+            {block.block.block_type == "image_heading_text" && (
+              <ImageHeadingTextBlock phrases={block.phrases} />
             )}
           </form>
         );
