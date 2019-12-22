@@ -12,7 +12,7 @@ export default ({ title, page_id, published, image }) => {
             className={published ? "eye published" : "eye unpublished"}
           ></div>
         </div>
-        <MoreButton page_id={page_id} />
+        {/* <MoreButton page_id={page_id} /> */}
       </div>
       <div className={image == "" ? "cover placeholder" : "cover"}>
         {image != "" && <img src={image} alt="" />}

@@ -5,7 +5,7 @@ export default ({ close, createBlock }) => {
   return (
     <>
       <div className="create_block_header">
-        <h1>Layouts</h1>
+        <h1>Templates</h1>
         <div className="create_block_close" onClick={close}></div>
       </div>
       <div className="create_block_cards">
