@@ -34,17 +34,6 @@ export default () => {
   };
 
   let save_page = () => {
-    //Saving Page info
-    let form_data = {};
-    $(".page_edit_wrapper")
-      .serializeArray()
-      .forEach(el => {
-        form_data[el.name] = el.value;
-      });
-    Axios.post("/page/handle_edit", {
-      page: form_data,
-      id: page.page.id,
-    });
     // Going through phrases and saving'em one by one
     $(".phrase")
       .serializeArray()
@@ -65,6 +54,17 @@ export default () => {
         },
       });
     }
+    //Saving Page info
+    let form_data = {};
+    $(".page_edit_wrapper")
+      .serializeArray()
+      .forEach(el => {
+        form_data[el.name] = el.value;
+      });
+    Axios.post("/page/handle_edit", {
+      page: form_data,
+      id: page.page.id,
+    });
   };
 
   let check_filled = () => {

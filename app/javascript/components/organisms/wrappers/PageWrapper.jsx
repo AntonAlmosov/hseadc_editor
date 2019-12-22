@@ -11,7 +11,7 @@ export default ({ pages }) => {
             title={page.title}
             page_id={page.id}
             published={page.published}
-            image=""
+            image={page.cover}
             key={"page_" + page.title + "_id_" + page.id}
           />
         );

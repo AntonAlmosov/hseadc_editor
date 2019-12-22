@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2019_12_21_152411) do
     t.string "role"
     t.boolean "published"
     t.text "description"
+    t.string "cover"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

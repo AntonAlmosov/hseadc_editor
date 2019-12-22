@@ -40,6 +40,13 @@ class PageController < ApplicationController
   def handle_edit
     page = Page.find(params[:id])
     page.update(page_params)
+    page.blocks.each do |block|
+      if block.block_type == 'image' 
+        page.cover = block.phrases[0].content
+        page.save
+      end
+      break if block.block_type == 'image'
+    end
   end
 
   private 

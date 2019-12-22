@@ -7,6 +7,7 @@ class CreatePages < ActiveRecord::Migration[6.0]
       t.string :role
       t.boolean :published
       t.text :description
+      t.string :cover
 
       t.timestamps
     end
