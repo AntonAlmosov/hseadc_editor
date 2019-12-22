@@ -22,7 +22,7 @@ export default ({ onChange }) => {
         onBlur={() => setFocus(false)}
         onChange={e => handleChange(e.target.value)}
         className={focus ? "focused" : "unfocused"}
-        placeholder="Start typing a category, recepient or part of a description..."
+        placeholder="Search..."
       />
       {!empty && <div className="wipe_icon" onClick={handleWipe}></div>}
     </div>
