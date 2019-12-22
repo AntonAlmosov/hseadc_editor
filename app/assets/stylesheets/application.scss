@@ -12,10 +12,10 @@
  *= require_self
  */
 
-@import 'reset';
-@import 'variables';
-@import 'components/**/*';
-
+@import "reset";
+@import "fonts";
+@import "variables";
+@import "components/**/*";
 
 body {
   background-color: #121212;
