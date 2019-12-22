@@ -67,6 +67,10 @@ export default () => {
     });
   };
 
+  let handle_block_delete = id => {
+    Axios.post("/block/handle_destroy", { id: id }).then(get_page);
+  };
+
   let check_filled = () => {
     let checker = true;
     $(".page_edit_wrapper")
@@ -121,7 +125,7 @@ export default () => {
             handle_modal("create_block_modal");
           }}
         />
-        <EditContent blocks={page.blocks} />
+        <EditContent blocks={page.blocks} handleDelete={handle_block_delete} />
         <div
           style={{ float: "left", clear: "both" }}
           className="scrollToBottom"

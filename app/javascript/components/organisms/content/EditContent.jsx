@@ -1,12 +1,14 @@
 import React from "react";
+
 import TextTextBlock from "../../molecules/edit_blocks/TextTextBlock";
 import HeadingTextBlock from "../../molecules/edit_blocks/HeadingTextBlock";
 import ImageBlock from "../../molecules/edit_blocks/ImageBlock";
 import ImageHeadingTextBlock from "../../molecules/edit_blocks/ImageHeadingTextBlock";
 import HeadingTextImage from "../../molecules/edit_blocks/HeadingTextImage";
 import ImageImageBlock from "../../molecules/edit_blocks/ImageImageBlock";
+import DeleteButton from "../../atoms/buttons/DeleteButton";
 
-export default ({ blocks }) => {
+export default ({ blocks, handleDelete }) => {
   return (
     <div className="edit_content">
       {blocks.map(block => {
@@ -15,6 +17,7 @@ export default ({ blocks }) => {
             className={"edit_block " + block.block.block_type + "_block"}
             key={block.block.id}
           >
+            <DeleteButton id={block.block.id} onClick={handleDelete} />
             {block.block.block_type == "text_text" && (
               <TextTextBlock phrases={block.phrases} />
             )}

@@ -2,7 +2,25 @@
   width: 1033px;
   margin: 0 auto;
   .edit_block {
-    margin-top: 60px;
+    margin-top: 130px;
+    position: relative;
+    &:hover {
+      .delete_button {
+        display: block;
+      }
+    }
+    .delete_button {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: -67px;
+      width: 67px;
+      height: 44px;
+      padding-right: 26px;
+      background-image: url(asset-path("icons/trash.svg"));
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
     &:last-of-type {
       padding-bottom: 100px;
     }
