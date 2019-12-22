@@ -10,9 +10,6 @@ Rails.application.configure do
   config.active_storage.service = :local
 
 
-  config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
-  config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
-
   # Do not eager load code on boot.
   config.eager_load = false
 
