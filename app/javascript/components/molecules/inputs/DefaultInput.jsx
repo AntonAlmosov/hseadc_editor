@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import Textarea from "react-textarea-autosize";
+
 export default ({ label, placeholder, defaultValue, name }) => {
   const [focused, setFocused] = useState(false);
   let change_label = () => {
@@ -10,7 +12,7 @@ export default ({ label, placeholder, defaultValue, name }) => {
       <div className={focused ? "input_label active" : "input_label normal"}>
         {label}
       </div>
-      <input
+      <Textarea
         autoComplete="off"
         name={name}
         type="text"
