@@ -14,8 +14,9 @@ export default ({ title, page_id, published, image }) => {
         </div>
         {/* <MoreButton page_id={page_id} /> */}
       </div>
-      <div className={image ? "cover placeholder" : "cover"}>
-        {image != "" && <img src={image} alt="" />}
+      <div className={image == null ? "cover placeholder" : "cover"}>
+        {console.log(image)}
+        {image != null && <img src={image} alt="" />}
       </div>
     </a>
   );
