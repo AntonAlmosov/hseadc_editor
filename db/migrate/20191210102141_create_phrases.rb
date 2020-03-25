@@ -5,7 +5,8 @@ class CreatePhrases < ActiveRecord::Migration[6.0]
       t.integer :position
       t.string :phrase_type
       t.text :content
-
+      t.string :custom_class
+      
       t.timestamps
     end
   end

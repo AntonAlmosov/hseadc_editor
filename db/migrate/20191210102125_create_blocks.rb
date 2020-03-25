@@ -4,7 +4,6 @@ class CreateBlocks < ActiveRecord::Migration[6.0]
       t.integer :page_id
       t.integer :position
       t.string :block_type
-      t.string :custom_class
 
       t.timestamps
     end
