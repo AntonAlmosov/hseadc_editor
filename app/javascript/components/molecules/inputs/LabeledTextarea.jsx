@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Textarea from "react-textarea-autosize";
-import pluralize from "pluralize";
+import plural from "plural-ru";
 
 export default ({ defaultValue, label, name }) => {
   const [focused, setFocused] = useState(false);
@@ -25,7 +25,7 @@ export default ({ defaultValue, label, name }) => {
           {label}
         </div>
         <div className="textarea_symbols">
-          {cap + " " + pluralize("symbol", cap) + " left"}
+          {cap + " " + plural(cap, "символ", "символа", "символов")}
         </div>
       </div>
       <Textarea
@@ -36,7 +36,7 @@ export default ({ defaultValue, label, name }) => {
         maxLength={400}
         className="heading_textarea"
         defaultValue={defaultValue}
-        placeholder={"Describe your project in a few words..."}
+        placeholder={"Расскажи пару слов о своем проекте..."}
       />
     </div>
   );

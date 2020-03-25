@@ -28,7 +28,7 @@ class PhraseController < ApplicationController
 
   private
     def phrase_params
-      params.require(:phrase).permit(:image, :content)
+      params.require(:phrase).permit(:image, :content, :custom_class)
     end
   
 end

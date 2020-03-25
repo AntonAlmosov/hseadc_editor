@@ -16,7 +16,7 @@ export default ({ phrases }) => {
     }
   };
   return (
-    <div className="image_heading_text_block">
+    <div className="image_text_block">
       <div
         className={url ? "image_block default" : "image_block without_image"}
       >
@@ -36,16 +36,10 @@ export default ({ phrases }) => {
       <div className="edit_column">
         <Textarea
           name={phrases[1].id}
-          className="phrase heading"
-          defaultValue={phrases[1].content}
-          placeholder="And write something important here... Everything you want. In one abstact 🌈"
-        />
-        <Textarea
-          name={phrases[2].id}
           className="phrase text"
-          defaultValue={phrases[2].content}
+          defaultValue={phrases[1].content}
           placeholder={
-            "And write something important here... Everything you want. In one abstact 🌈"
+            "А теперь напиши здесь что-то важное... Все что захочешь. В одном абзаце 🌈"
           }
         />
       </div>

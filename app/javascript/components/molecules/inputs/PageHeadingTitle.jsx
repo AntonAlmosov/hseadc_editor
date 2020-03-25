@@ -10,7 +10,7 @@ export default ({ defaultValue, name }) => {
         name={name}
         type="text"
         defaultValue={defaultValue == "Untitled" ? null : defaultValue}
-        placeholder={"Untitled..."}
+        placeholder={"Название..."}
       />
     </div>
   );

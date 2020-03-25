@@ -40,18 +40,16 @@ ActiveRecord::Schema.define(version: 2019_12_21_152411) do
     t.integer "page_id"
     t.integer "position"
     t.string "block_type"
+    t.string "custom_class"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "pages", force: :cascade do |t|
     t.string "title"
-    t.integer "year"
     t.string "team"
-    t.string "role"
     t.boolean "published"
     t.text "description"
-    t.string "cover"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -61,7 +59,6 @@ ActiveRecord::Schema.define(version: 2019_12_21_152411) do
     t.integer "position"
     t.string "phrase_type"
     t.text "content"
-    t.string "custom_class"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,20 +1,21 @@
 .create_block_modal {
-  width: 880px;
-  margin-left: -440px;
-  height: 490px;
-  margin-top: -245px;
-  border-radius: 12px;
-  background-color: #191919;
+  width: 924px;
+  margin-left: -462px;
+  height: 488px;
+  margin-top: -244px;
+  border-radius: 32px;
+  background-color: #252525;
   .create_block_header {
     width: 100%;
-    height: 124px;
     font-family: $font;
     display: flex;
     justify-content: space-between;
     align-items: center;
     h1 {
-      margin-left: 34px;
-      color: rgba(196, 196, 196, 0.87);
+      margin-left: 59px;
+      margin-top: 46px;
+      margin-bottom: 32px;
+      color: rgba(255, 255, 255, 0.87);
       font-weight: 500;
       font-size: 36px;
       line-height: 48px;
@@ -22,66 +23,45 @@
     }
     .create_block_close {
       cursor: pointer;
-      width: 28px;
-      height: 28px;
-      margin-right: 42px;
-      margin-top: 10px;
+      width: 18px;
+      height: 18px;
+      margin-right: 61px;
+      margin-top: 51px;
       background-image: url(asset-path("icons/close.svg"));
+      background-size: contain;
+      background-position: center;
     }
   }
   .create_block_cards {
     display: flex;
     flex-wrap: wrap;
-    padding-left: 39px;
-    box-sizing: border-box;
-    width: 100%;
-    height: calc(100% - 162px);
-    overflow-y: scroll;
+    margin: 0 auto;
+    width: 804px;
+    justify-content: space-between;
     .create_block_card {
       cursor: pointer;
       width: 253px;
       height: 144px;
       background-size: contain;
+      margin-bottom: 23px;
     }
     .image_block {
-      margin-top: 10px;
-      margin-right: 23px;
-      background-image: url(asset-path("cards/content/image.svg"));
+      background-image: url(asset-path("cards/content/Group180.svg"));
     }
     .heading_text_block {
-      margin-top: 10px;
-      margin-right: 23px;
-      background-image: url(asset-path("cards/content/heading_text.svg"));
+      background-image: url(asset-path("cards/content/Group179.svg"));
     }
-    .image_heading_text_block {
-      margin-top: 10px;
-      margin-right: 0px;
-      background-image: url(asset-path("cards/content/image_heading_text.svg"));
+    .image_text_block {
+      background-image: url(asset-path("cards/content/Group178.svg"));
     }
-    .heading_text_image_block {
-      margin-top: 10px;
-      margin-right: 23px;
-      background-image: url(asset-path("cards/content/heading_text_image.svg"));
+    .heading_caption_text_block {
+      background-image: url(asset-path("cards/content/Group183.svg"));
     }
-    .text_text_block {
-      margin-top: 10px;
-      margin-right: 23px;
-      background-image: url(asset-path("cards/content/text_text.svg"));
+    .text_block {
+      background-image: url(asset-path("cards/content/Group182.svg"));
     }
-    .image_image_block {
-      margin-top: 10px;
-      margin-right: 0px;
-      background-image: url(asset-path("cards/content/image_image.svg"));
-    }
-    .video_block {
-      margin-top: 10px;
-      margin-right: 23px;
-      background-image: url(asset-path("cards/content/video.svg"));
-    }
-    .bookmark_block {
-      margin-top: 10px;
-      margin-right: 23px;
-      background-image: url(asset-path("cards/content/bookmark.svg"));
+    .feature_block {
+      background-image: url(asset-path("cards/content/Group181.svg"));
     }
   }
 }

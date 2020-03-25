@@ -11,7 +11,7 @@ export default ({ onSaveClick, filled }) => {
       <div className="header_buttons">
         <DefaultButton
           onClick={onSaveClick}
-          label="Save changes"
+          label="Сохранить"
           use={filled ? "active" : "inactive"}
         />
         <HeaderMoreButton />

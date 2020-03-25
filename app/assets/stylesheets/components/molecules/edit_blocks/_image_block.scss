@@ -24,9 +24,12 @@
         align-items: center;
         cursor: pointer;
         .image_block_label {
-          width: 107px;
-          height: 104px;
+          width: 594px;
+          height: 332px;
           background-image: url(asset-path("cards/upload_image.svg"));
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
         }
       }
     }
@@ -49,9 +52,12 @@
         align-items: center;
         cursor: pointer;
         .image_block_label {
-          width: 107px;
-          height: 104px;
+          width: 594px;
+          height: 332px;
           background-image: url(asset-path("cards/upload_image.svg"));
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
         }
       }
     }

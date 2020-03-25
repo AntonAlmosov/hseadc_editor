@@ -4,25 +4,61 @@
   .edit_block {
     margin-top: 130px;
     position: relative;
-    &:hover {
-      .delete_button {
-        display: block;
-      }
-    }
-    .delete_button {
-      display: none;
+    .block_menu {
       position: absolute;
       top: 0;
-      left: -67px;
-      width: 67px;
-      height: 44px;
-      padding-right: 26px;
-      background-image: url(asset-path("icons/trash.svg"));
-      background-size: contain;
-      background-repeat: no-repeat;
+      left: -71px;
+      width: 50px;
+      height: 100%;
+      &::after {
+        content: " ";
+        display: block;
+        width: 1px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.12);
+      }
+      .icon {
+        width: 30px;
+        height: 30px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-bottom: 5.2px;
+        cursor: pointer;
+        border-radius: 100px-icon;
+      }
+      .delete_button {
+        background-image: url(asset-path("icons/trash.svg"));
+      }
+      .colors {
+        background-image: url(asset-path("icons/colors.svg"));
+      }
+      .toggleClose {
+        background-image: url(asset-path("icons/toggleClose.svg"));
+      }
+      .green-icon {
+        background-image: url(asset-path("icons/green.svg"));
+      }
+      .white-icon {
+        background-image: url(asset-path("icons/white.svg"));
+      }
+      .grey-icon {
+        background-image: url(asset-path("icons/grey.svg"));
+      }
+      .left-icon {
+        background-image: url(asset-path("icons/left.svg"));
+      }
+      .center-icon {
+        background-image: url(asset-path("icons/center.svg"));
+      }
+      .right-icon {
+        background-image: url(asset-path("icons/right.svg"));
+      }
     }
     &:last-of-type {
-      padding-bottom: 100px;
+      margin-bottom: 100px;
     }
   }
 }

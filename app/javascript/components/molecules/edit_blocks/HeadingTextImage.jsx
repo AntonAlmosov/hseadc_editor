@@ -1,54 +1,35 @@
 import React, { useState } from "react";
 import Textarea from "react-textarea-autosize";
 
-export default ({ phrases }) => {
-  const [url, setUrl] = useState(phrases[2].content);
-
-  let handle_url = input => {
-    if (input.files && input.files[0]) {
-      var reader = new FileReader();
-
-      reader.onload = function(e) {
-        setUrl(e.target.result);
-      };
-
-      reader.readAsDataURL(input.files[0]);
-    }
-  };
+export default ({ phrases, customClass }) => {
   return (
-    <div className="image_heading_text_block">
-      <div className="edit_column">
-        <Textarea
-          name={phrases[0].id}
-          className="phrase heading"
-          defaultValue={phrases[0].content}
-          placeholder="And write something important here... Everything you want. In one abstact 🌈"
-        />
-        <Textarea
-          name={phrases[1].id}
-          className="phrase text"
-          defaultValue={phrases[1].content}
-          placeholder={
-            "And write something important here... Everything you want. In one abstact 🌈"
-          }
-        />
-      </div>
-      <div
-        className={url ? "image_block default" : "image_block without_image"}
-      >
-        {url && <img src={url} />}
-        <div className="image_block_uploader">
-          <input
-            className="phrase_image"
-            type="file"
-            id={"phrase_" + phrases[2].id}
-            onChange={e => handle_url(e.target)}
-          />
-          <label htmlFor={"phrase_" + phrases[2].id}>
-            <div className="image_block_label"></div>
-          </label>
-        </div>
-      </div>
-    </div>
+    <>
+      <Textarea
+        name={phrases[0].id}
+        id={phrases[0].id}
+        className={"phrase heading "}
+        data-custom={customClass}
+        defaultValue={phrases[0].content}
+        placeholder="Заголовок"
+      />
+      <Textarea
+        name={phrases[1].id}
+        id={phrases[1].id}
+        className={"phrase caption "}
+        data-custom={customClass}
+        defaultValue={phrases[1].content}
+        placeholder={"Добавь подзаголовок"}
+      />
+      <Textarea
+        name={phrases[2].id}
+        id={phrases[2].id}
+        className={"phrase text "}
+        data-custom={customClass}
+        defaultValue={phrases[2].content}
+        placeholder={
+          "А теперь напиши здесь что-то важное... Все что захочешь. В одном абзаце 🌈"
+        }
+      />
+    </>
   );
 };

@@ -5,7 +5,7 @@ export default ({ close, createBlock }) => {
   return (
     <>
       <div className="create_block_header">
-        <h1>Templates</h1>
+        <h1>Лейауты</h1>
         <div className="create_block_close" onClick={close}></div>
       </div>
       <div className="create_block_cards">
@@ -18,20 +18,20 @@ export default ({ close, createBlock }) => {
           onClick={() => createBlock("heading_text")}
         ></div>
         <div
-          className="create_block_card image_image_block"
-          onClick={() => createBlock("image_image")}
+          className="create_block_card image_text_block"
+          onClick={() => createBlock("image_text")}
         ></div>
         <div
-          className="create_block_card heading_text_image_block"
-          onClick={() => createBlock("heading_text_image")}
+          className="create_block_card feature_block"
+          onClick={() => createBlock("feature")}
         ></div>
         <div
-          className="create_block_card text_text_block"
-          onClick={() => createBlock("text_text")}
+          className="create_block_card text_block"
+          onClick={() => createBlock("text")}
         ></div>
         <div
-          className="create_block_card image_heading_text_block"
-          onClick={() => createBlock("image_heading_text")}
+          className="create_block_card heading_caption_text_block"
+          onClick={() => createBlock("heading_caption_text")}
         ></div>
       </div>
     </>

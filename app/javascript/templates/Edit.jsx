@@ -7,7 +7,6 @@ import PageEditWrapper from "../components/organisms/wrappers/PageEditWrapper";
 import CreationOverlay from "../components/organisms/overlays/CreationOverlay";
 import ModalWrapper from "../components/organisms/overlays/ModalWrapper";
 import EditContent from "../components/organisms/content/EditContent";
-import { element } from "prop-types";
 
 export default () => {
   const [page, setPage] = useState({ page: { title: "" }, blocks: [] });
@@ -37,12 +36,15 @@ export default () => {
     // Going through phrases and saving'em one by one
     $(".phrase")
       .serializeArray()
-      .forEach(el =>
+      .forEach((el, i) => {
+        let custom =
+          document.getElementById(el.name) &&
+          document.getElementById(el.name).dataset.custom;
         Axios.post("/phrase/handle_edit", {
-          phrase: { content: el.value },
+          phrase: { content: el.value, custom_class: custom || "" },
           id: [el.name],
-        })
-      );
+        });
+      });
     let images = document.querySelectorAll(".phrase_image");
     for (let i = 0; i < images.length; i++) {
       const formData = new FormData();
@@ -55,15 +57,20 @@ export default () => {
       });
     }
     //Saving Page info
-    let form_data = {};
+    const formData = new FormData();
     $(".page_edit_wrapper")
       .serializeArray()
       .forEach(el => {
-        form_data[el.name] = el.value;
+        console.log(el);
+        formData.append(el.name, el.value);
       });
-    Axios.post("/page/handle_edit", {
-      page: form_data,
-      id: page.page.id,
+    let image = document.getElementById("cover-image").files[0];
+    if (image) formData.append("cover", image);
+    formData.append("id", window.location.pathname.split("/")[2]);
+    Axios.post("/page/handle_edit", formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
     });
   };
 
@@ -119,7 +126,11 @@ export default () => {
           onSaveClick={filled ? save_page : () => {}}
           filled={filled}
         />
-        <PageEditWrapper page={page.page} onChange={check_filled} />
+        <PageEditWrapper
+          page={page.page}
+          cover={page.cover}
+          onChange={check_filled}
+        />
         <CreationOverlay
           onClick={() => {
             handle_modal("create_block_modal");

@@ -1,10 +1,11 @@
 .heading_text_block {
-  display: flex;
-  justify-content: space-between;
+  width: 460px;
   .heading {
     width: 460px;
+    white-space: pre-line;
   }
   .text {
     width: 345px;
+    white-space: pre-line;
   }
 }

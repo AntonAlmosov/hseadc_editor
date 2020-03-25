@@ -18,7 +18,15 @@ class PageController < ApplicationController
 
   def get_pages
     pages = Page.all
-    render :json => pages 
+    res = []
+    pages.each do |page|
+      if page.cover.attached?
+        res.push({title: page.title, published: page.published, id: page.id, team: page.team, description: page.description, cover: polymorphic_url(page.cover)})
+      else
+        res.push({title: page.title, published: page.published, id: page.id, team: page.team, description: page.description})
+      end
+    end
+    render :json => res
   end
 
   def get_page
@@ -27,9 +35,15 @@ class PageController < ApplicationController
     page.blocks.each do |block|
       blocks.push({block: block, phrases:block.phrases})
     end
-    collection = {page: page, blocks: blocks}
+    collection = {}
+    if page.cover.attached?
+      collection = {page: page, blocks: blocks, cover: polymorphic_url(page.cover)}
+    else
+      collection = {page: page, blocks: blocks, cover: ''}
+    end
+
     msg = { :status => "ok", :response => collection }
-    render :json => msg 
+    render :json => {response: collection}
   end
 
   def handle_create
@@ -39,13 +53,10 @@ class PageController < ApplicationController
 
   def handle_edit
     page = Page.find(params[:id])
-    page.update(page_params)
-    page.blocks.each do |block|
-      if block.block_type == 'image' 
-        page.cover = block.phrases[0].content
-        page.save
-      end
-      break if block.block_type == 'image'
+    if params.has_key?(:cover)
+      page.update({title: params[:title], description: params[:description], team: params[:team], cover: params[:cover]})
+    else
+      page.update({title: params[:title], description: params[:description], team: params[:team]})
     end
   end
 
@@ -54,6 +65,6 @@ class PageController < ApplicationController
       params.require(:page).permit(:title, :published)
     end
     def page_params
-      params.require(:page).permit(:title, :year, :role, :team, :description)
+      params.require(:page).permit(:title, :team, :description, :cover)
     end
 end

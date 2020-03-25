@@ -7,17 +7,9 @@ export default ({ phrases, customClass }) => {
       <Textarea
         name={phrases[0].id}
         id={phrases[0].id}
-        className={"phrase heading "}
+        className="phrase text"
         data-custom={customClass}
         defaultValue={phrases[0].content}
-        placeholder="Заголовок"
-      />
-      <Textarea
-        name={phrases[1].id}
-        id={phrases[1].id}
-        className={"phrase text "}
-        data-custom={customClass}
-        defaultValue={phrases[1].content}
         placeholder={
           "А теперь напиши здесь что-то важное... Все что захочешь. В одном абзаце 🌈"
         }
